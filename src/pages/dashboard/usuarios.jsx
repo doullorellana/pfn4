@@ -10,12 +10,18 @@ import {
 } from "@material-tailwind/react";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import { authorsTableData, projectsTableData } from "@/data";
-import { useEffect, useState } from "react";
+import { Fragment, useRef, useEffect, useState } from "react";
+import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
+import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 
 export function Usuarios() {
 
   const [usuarios, setUsuarios] = useState(null);
   const url = 'http://127.0.0.1:8000/api/usuarios';
+
+  const [open, setOpen] = useState(true)
+
+  const cancelButtonRef = useRef(null)
 
   useEffect(() => {
     const getUsuarios = async () => {
@@ -30,9 +36,22 @@ export function Usuarios() {
     <div className="mt-12 mb-8 flex flex-col gap-12">
       <Card>
         <CardHeader variant="gradient" color="gray" className="mb-8 p-6">
-          <Typography variant="h6" color="white">
-            Registro de usuarios en el sistema
-          </Typography>
+          <div className="flex space-x-5">
+            <div>
+              <Typography variant="h6" color="white">
+                Registro de usuarios en el sistema
+              </Typography>
+            </div>
+            <div>
+              <button>
+                <Chip
+                  variant="gradient"
+                  color="blue"
+                  value="Agregar Usuarios"
+                  className="py-0.5 px-4 text-[13px] font-medium w-fit"
+                /></button>
+            </div>
+          </div>
         </CardHeader>
         <CardBody className="overflow-x-scroll px-0 pt-0 pb-2">
           <table className="w-full min-w-[640px] table-auto">
@@ -57,8 +76,8 @@ export function Usuarios() {
               {usuarios && usuarios.map(
                 ({ id, id_persona, usuario_email, estado, fecha_nacimiento, id_rol, usuario_creacion, fecha_creacion, usuario_modificacion, fecha_modificacion }, key) => {
                   const className = `py-3 px-5 ${key === usuarios.length - 1
-                      ? ""
-                      : "border-b border-blue-gray-50"
+                    ? ""
+                    : "border-b border-blue-gray-50"
                     }`;
 
                   return (
@@ -144,7 +163,6 @@ export function Usuarios() {
           </table>
         </CardBody>
       </Card>
-
     </div>
   );
 }
