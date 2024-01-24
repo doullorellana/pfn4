@@ -2,12 +2,13 @@ import {
   HomeIcon,
   UserCircleIcon,
   TableCellsIcon,
+  Cog6ToothIcon,
   InformationCircleIcon,
   ServerStackIcon,
   RectangleStackIcon,
   LinkIcon,
 } from "@heroicons/react/24/solid";
-import { Home, Profile, Tables, Notifications } from "@/pages/dashboard";
+import { Home, Usuarios, Roles, Bitacoras, Paginas } from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
 
 const icon = {
@@ -27,26 +28,26 @@ export const routes = [
       {
         icon: <UserCircleIcon {...icon} />,
         name: "Usuarios",
-        path: "/profile",
-        element: <Profile />,
+        path: "/usuarios",
+        element: <Usuarios />,
+      },
+      {
+        icon: <Cog6ToothIcon {...icon} />,
+        name: "Roles",
+        path: "/roles",
+        element: <Roles />,
       },
       {
         icon: <TableCellsIcon {...icon} />,
-        name: "Roles",
-        path: "/tables",
-        element: <Tables />,
-      },
-      {
-        icon: <InformationCircleIcon {...icon} />,
         name: "Bitacoras",
-        path: "/notifications",
-        element: <Notifications />,
+        path: "/bitacoras",
+        element: <Bitacoras />,
       },
       {
         icon: <LinkIcon {...icon} />,
         name: "Paginas",
-        path: "/",
-        element: <Notifications />,
+        path: "/Paginas",
+        element: <Paginas />,
       },
     ],
   },

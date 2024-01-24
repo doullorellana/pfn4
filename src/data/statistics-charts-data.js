@@ -107,23 +107,23 @@ const completedTasksChart = {
 export const statisticsChartsData = [
   {
     color: "white",
-    title: "Website View",
-    description: "Last Campaign Performance",
-    footer: "campaign sent 2 days ago",
+    title: "Asistencia Semanal Alumnos Funval",
+    description: "Ejemplo de registros de las asistencias de la última semana",
+    footer: "actualizado hace 20 minutos",
     chart: websiteViewsChart,
   },
   {
     color: "white",
-    title: "Daily Sales",
-    description: "15% increase in today sales",
-    footer: "updated 4 min ago",
+    title: "Nuevos Alumnos en Funval Internacional",
+    description: "Ejemplo del registro de nuevos alumnos en Funval",
+    footer: "actualizado hace 2 minutos",
     chart: dailySalesChart,
   },
   {
     color: "white",
-    title: "Completed Tasks",
-    description: "Last Campaign Performance",
-    footer: "just updated",
+    title: "Egresados de Funval Internacional",
+    description: "Ejemplo del registro de alumnos egresados de Funval",
+    footer: "actualizado recientemente",
     chart: completedTasksChart,
   },
 ];
